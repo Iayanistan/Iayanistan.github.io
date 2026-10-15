@@ -142,10 +142,12 @@ window.PROJECTS = [
     categories: ["mechanical"],
     featured: true,
     team: "With Chase Masterson",
-    tools: ["ANSYS Mechanical", "SpaceClaim", "MATLAB (1D rod elements)", "Mesh convergence study", "Hand-calc validation"],
+    tools: ["ANSYS Mechanical", "SpaceClaim", "Al 7075-T6", "Bolt preload (2-step analysis)", "MATLAB (1D rod elements)", "Mesh convergence study", "Hand-calc validation"],
     metrics: [
-      { value: "1 m", label: "Drop height used for the landing-load model" },
-      { value: "2", label: "Interface designs compared (splined, tapered)" },
+      { value: "~20%", label: "Lower peak stress for the splined interface than the tapered one" },
+      { value: "396 vs 498 MPa", label: "Peak stress, splined vs. tapered, under a 4.15 kN load" },
+      { value: "<1%", label: "Agreement with analytic stresses on benchmark shafts" },
+      { value: "<2.3%", label: "Mesh-convergence change after refining to 0.56 mm at the bolt holes" },
     ],
     figures: [
       { src: "assets/img/crank-fea/01.png", caption: "Von Mises stress, final mesh (splined)" },
@@ -296,6 +298,8 @@ window.REPORTS = [
 
 // Experience / awards / leadership strip on the home page (facts from your resume).
 window.EXPERIENCE = [
+  { title: "Chemical Engineering Intern · Hyera Inc.", date: "Jun – Aug 2026",
+    text: "Coupled CFD-DEM model (ANSYS Rocky–Fluent) of steam activation in a double-walled rotary kiln, with the flighted fluid domain extracted from plant CAD; built a 4-channel thermocouple data-acquisition system (HOBO UX120-014M) to provide validation data for the CFD model." },
   { title: "Chemical Engineering Intern · Hyera Inc.", date: "Jul – Aug 2025",
     text: "1D MATLAB batch-reactor model of pyrolysis and activation, optimized with a genetic algorithm and a surrogate model and validated against experimental data; started a 2D ANSYS Fluent reactor model." },
   { title: "Finalist, top 10 of 100+ teams · Stanford Health Design Competition", date: "Oct 2025",
