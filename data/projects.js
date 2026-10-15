@@ -276,9 +276,9 @@ window.PROJECTS = [
 
 // Technical reports (PDFs in assets/reports/), listed on the home page.
 window.REPORTS = [
-  { title: "Two-Player Strategy in Ludo: A Monte Carlo Study", course: "MA 342 · Individual project", date: "May 2026",
-    authors: "Iayan Ansari", pages: 12, file: "assets/reports/ma342-ludo-monte-carlo.pdf", project: "ludo",
-    blurb: "Simulated tens of thousands of games to compare Aggressive, Cohesive, Defensive and Runner strategies, with controls for play order and seating." },
+  { title: "Ludo Strategy Comparison: A Monte Carlo Study", course: "MA 342 · Individual project", date: "May 2026",
+    authors: "Iayan Ansari", pages: 10, file: "assets/reports/ma342-ludo-monte-carlo.pdf", project: "ludo",
+    blurb: "About 25,000 simulated games comparing a knockout-seeking Aggressive strategy with a pack-keeping Cohesive one, with controls for play order and seating, plus game-length and knockout analysis." },
   { title: "Radiotherapy Dose Modeling & Treatment-Plan Optimization", course: "MA 342 · Project 1", date: "Mar 2026",
     authors: "Ben Egelseer & Iayan Ansari", pages: 9, file: "assets/reports/ma342-p1-radiotherapy.pdf",
     blurb: "A dose model for radiation beams and an optimization that targets the tumor while sparing healthy tissue." },
