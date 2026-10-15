@@ -32,12 +32,8 @@ Please check them. Subtitles, captions and experience blurbs are short factual d
 ## 2. Media still needed
 | Project | What to add |
 |---|---|
-| FSAE Pedal Box | SolidWorks renders and build photos (the GPE folder only has vendor catalog images) |
-| Limit Order Book | Screenshot/GIF of the visualizer, plus a README on GitHub |
-| Qibla Finder | Device photos/video and enclosure CAD; one integrated sketch on GitHub |
-| Jetpack Joyride | Gameplay GIF; replace the course-template README on GitHub; add teammates to `team` |
-| Heat & Wave PDEs | 2–3 figures exported from the report, plus a MATLAB vs. C++ speedup number |
-| Ludo Monte Carlo | Regenerate figures with professional strategy names and a white background (the current ones say "Screw You"/"FU"/"Yeet") |
+| Limit Order Book | A README on GitHub, and a benchmark to back the 60+ FPS claim |
+| Jetpack Joyride | Replace the course-template README on GitHub; add teammates to `team` |
 | Crypto (MA384) | Confirm whether it was individual or team (`team` field) |
 
 To add figures: put images in `assets/img/<project-id>/` and list them in that project's `figures` array.
@@ -66,6 +62,7 @@ Note: the demo video is about 56 MB. That's under GitHub's 100 MB limit, but you
 Your resume PDF will be public on the site, so consider removing your phone number from that copy.
 
 ## 5. Left out on purpose
+- **Removed until they have figures:** FSAE Pedal Box (needs SolidWorks renders/build photos), Heat & Wave PDEs (export figures from the report), Qibla Finder (device photos/video). Their earlier entries are in git history (commit dc9ec72) if you want to restore them.
 - **MDS410 capstone:** add it once the model has results, and check the client IP agreement first.
 - **Fluid Simulator:** it's Matthias Müller's Ten Minute Physics code, not original work.
 - **Stubs and tutorials:** Equal-Weight S&P, HackerRank, Ranked-Matchmaker, jub. Also the "Maybe" items (Radiotherapy, ES205 piezo, EM204 memos, EM104 CAD).

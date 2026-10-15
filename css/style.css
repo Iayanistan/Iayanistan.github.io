@@ -104,8 +104,8 @@ footer { border-top: 1px solid var(--line); margin-top: 48px; padding: 24px 0 40
 .facts { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 14px; color: var(--muted); }
 .facts b { color: var(--text); font-weight: 600; }
 
-.hero-media { margin: 8px 0 32px; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
-.hero-media img, .hero-media video { width: 100%; max-height: 560px; object-fit: contain; background: #fff; }
+.hero-media { margin: 8px 0 32px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.hero-media img, .hero-media video { width: 100%; max-height: 560px; object-fit: contain; }
 .hero-media video { background: #000; }
 
 .layout { display: grid; grid-template-columns: 1fr; gap: 32px; }

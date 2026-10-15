@@ -39,7 +39,7 @@ function footer(P) {
 
 function card(p) {
   const cover = p.figures && p.figures[0];
-  const contain = cover && cover.src.endsWith(".png");
+  const contain = cover && cover.src.endsWith(".png") && p.coverFit !== "cover";
   const thumb = cover
     ? `<div class="thumb${contain ? " contain" : ""}"><img src="${cover.src}" alt="" loading="lazy"></div>`
     : `<div class="thumb placeholder">${esc(p.title)}</div>`;
