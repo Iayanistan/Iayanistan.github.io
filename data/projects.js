@@ -278,6 +278,5 @@ window.EXPERIENCE = [
     text: "1D MATLAB batch-reactor model of pyrolysis and activation, optimized with a genetic algorithm and a surrogate model and validated against experimental data; started a 2D ANSYS Fluent reactor model." },
   { title: "Finalist, top 10 of 100+ teams · Stanford Health Design Competition", date: "Oct 2025",
     text: "Led a 5-person team on the AMANI app, including a $26k budget proposal to Télécoms Sans Frontières." },
-  { title: "Brakes Project Lead · Rose Grand Prix Engineering (FSAE)", date: "Sep 2025 – present", text: "" },
   { title: "President · Muslim Student Association", date: "Apr 2024 – present", text: "Also Treasurer of the South Asian Student Alliance and VP of the International Student Association." },
 ];
