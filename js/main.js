@@ -33,6 +33,24 @@ function checkResume() {
   fetch(btn.getAttribute("href"), { method: "HEAD" }).then((r) => { if (!r.ok) btn.remove(); }).catch(() => btn.remove());
 }
 
+// Remove links whose file isn't published yet (e.g. a report still being prepared).
+function hideMissing(selector) {
+  if (location.protocol === "file:") return;
+  document.querySelectorAll(selector).forEach((el) => {
+    fetch(el.dataset.file, { method: "HEAD" }).then((r) => { if (!r.ok) el.remove(); }).catch(() => el.remove());
+  });
+}
+
+function reportItem(r) {
+  const proj = r.project ? ` · <a href="project.html?id=${r.project}">Project page</a>` : "";
+  return `<div class="report" data-file="${r.file}">
+    <div class="report-meta">${esc(r.course)} · ${esc(r.date)} · ${r.pages} pages</div>
+    <h3><a href="${r.file}" target="_blank" rel="noopener">${esc(r.title)}</a></h3>
+    <p>${esc(r.blurb)}</p>
+    <div class="report-foot">${esc(r.authors)} · <a href="${r.file}" target="_blank" rel="noopener">PDF ↗</a>${proj}</div>
+  </div>`;
+}
+
 function footer(P) {
   $("#footer").innerHTML = `© ${new Date().getFullYear()} ${esc(P.name)} · <a href="mailto:${P.email}">${esc(P.email)}</a> · <a href="${P.linkedin}">LinkedIn</a> · <a href="${P.github}">GitHub</a>`;
 }
@@ -80,6 +98,9 @@ function renderHome() {
     });
   });
 
+  $("#report-list").innerHTML = (window.REPORTS || []).map(reportItem).join("");
+  hideMissing(".report");
+
   $("#exp").innerHTML = window.EXPERIENCE.map((x) => `<div class="exp-item"><h3>${esc(x.title)}</h3><div class="date">${esc(x.date)}</div>${x.text ? `<p>${x.text}</p>` : ""}</div>`).join("");
   footer(P);
 }
@@ -122,8 +143,13 @@ function renderProject() {
     : "";
   const mediaNote = window.SHOW_PROMPTS && p.mediaNeeded ? `<section class="block"><div class="media-needed"><b>Media to add:</b> ${esc(p.mediaNeeded)}</div></section>` : "";
 
-  const links = p.links && p.links.length
-    ? `<div><h4>Links</h4><div class="btns">${p.links.map((l) => `<a class="btn" href="${l.href}" target="_blank" rel="noopener">${esc(l.label)} ↗</a>`).join("")}</div></div>` : "";
+  const report = (window.REPORTS || []).find((r) => r.project === p.id);
+  const allLinks = [
+    ...(report ? [{ label: "Read the full report", href: report.file, file: report.file }] : []),
+    ...(p.links || []),
+  ];
+  const links = allLinks.length
+    ? `<div><h4>Links</h4><div class="btns">${allLinks.map((l) => `<a class="btn" href="${l.href}" target="_blank" rel="noopener"${l.file ? ` data-file="${l.file}"` : ""}>${esc(l.label)} ↗</a>`).join("")}</div></div>` : "";
 
   const prev = list[(i - 1 + list.length) % list.length], next = list[(i + 1) % list.length];
 
@@ -144,6 +170,8 @@ function renderProject() {
       </aside>
     </div>
     <nav class="pager"><a href="project.html?id=${prev.id}">← ${esc(prev.title)}</a><a href="project.html?id=${next.id}" style="text-align:right">${esc(next.title)} →</a></nav>`;
+
+  hideMissing(".aside a[data-file]");
 
   const lb = $("#lightbox");
   document.querySelectorAll(".gallery figure").forEach((f) => f.addEventListener("click", () => {

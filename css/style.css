@@ -152,3 +152,14 @@ td:not(:first-child), th:not(:first-child) { font-variant-numeric: tabular-nums;
   .filters { flex-wrap: nowrap; overflow-x: auto; width: 100%; padding-bottom: 4px; }
   .filter { flex: none; }
 }
+
+/* technical reports */
+.reports { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+@media (max-width: 380px) { .reports { grid-template-columns: 1fr; } }
+.report { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; display: flex; flex-direction: column; gap: 6px; }
+.report-meta { font-size: 12px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.report h3 { font-family: var(--serif); font-weight: 600; font-size: 18px; line-height: 1.3; margin: 0; }
+.report h3 a { color: var(--text); text-decoration: none; }
+.report h3 a:hover { color: var(--accent); }
+.report p { margin: 0; font-size: 14px; color: var(--muted); }
+.report-foot { margin-top: auto; padding-top: 6px; font-size: 13px; color: var(--muted); }

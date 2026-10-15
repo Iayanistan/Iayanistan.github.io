@@ -272,6 +272,28 @@ window.PROJECTS = [
   },
 ];
 
+// Technical reports (PDFs in assets/reports/), listed on the home page.
+window.REPORTS = [
+  { title: "Two-Player Strategy in Ludo: A Monte Carlo Study", course: "MA 342 · Individual project", date: "May 2026",
+    authors: "Iayan Ansari", pages: 12, file: "assets/reports/ma342-ludo-monte-carlo.pdf", project: "ludo",
+    blurb: "Simulated tens of thousands of games to compare Aggressive, Cohesive, Defensive and Runner strategies, with controls for play order and seating." },
+  { title: "Radiotherapy Dose Modeling & Treatment-Plan Optimization", course: "MA 342 · Project 1", date: "Mar 2026",
+    authors: "Ben Egelseer & Iayan Ansari", pages: 9, file: "assets/reports/ma342-p1-radiotherapy.pdf",
+    blurb: "A dose model for radiation beams and an optimization that targets the tumor while sparing healthy tissue." },
+  { title: "Delay Differential Equations for Cloud-Computing Systems", course: "MA 342 · Project 2", date: "Mar 2026",
+    authors: "Iayan Ansari & Luke Gaston", pages: 11, file: "assets/reports/ma342-p2-delay-differential-equations.pdf",
+    blurb: "A time-delay model of a cloud network, with experiments sweeping the delay, coupling strength and network topology." },
+  { title: "Heat & Wave Equations on Complex Geometries", course: "MA 342 · Project 3", date: "Apr 2026",
+    authors: "Iayan Ansari, Ben Egelseer & Luke Gaston", pages: 21, file: "assets/reports/ma342-p3-heat-and-wave-equations.pdf",
+    blurb: "Finite-difference solvers for the 2D heat and wave equations on curved domains, with the time-stepping loop ported to C++." },
+  { title: "Stochastic Asset Pricing & Portfolio Optimization", course: "MA 342 · Project 4", date: "May 2026",
+    authors: "Ben Egelseer & Iayan Ansari", pages: 11, file: "assets/reports/ma342-p4-stochastic-finance.pdf",
+    blurb: "Monte Carlo simulation of stock prices, quadratic portfolio optimization, and bootstrap confidence intervals on the predictions." },
+  { title: "2D Ising Model: Monte Carlo Simulation & Critical Exponents", course: "MA 342 · Project 5", date: "May 2026",
+    authors: "Iayan Ansari, Ben Egelseer, Luke Gaston & Jack Silkaitis", pages: 25, file: "assets/reports/ma342-p5-ising-model.pdf",
+    blurb: "Monte Carlo simulation of a 2D atomic lattice, with linear regression to estimate the critical exponents." },
+];
+
 // Experience / awards / leadership strip on the home page (facts from your resume).
 window.EXPERIENCE = [
   { title: "Chemical Engineering Intern · Hyera Inc.", date: "Jul – Aug 2025",
